@@ -1,0 +1,74 @@
+# @format
+type Param {
+  name: String
+  value: String
+}
+type ParamDesc {
+  name: String
+  value: [String]
+}
+
+type Product {
+  _id: ID
+  name: String
+  price: Int
+  rating: Int
+  img: String
+  type: String
+  brand: String
+  desc: String
+  params: [Param]
+}
+
+type ProductDesc {
+  price: [Int]
+  types: [String]
+  brands: [String]
+  params: [ParamDesc]
+}
+
+type ResProducts {
+  results: [Product]
+  count: Int!
+}
+
+type ResMessage {
+  message: String
+}
+
+# ---INPUT ---
+
+enum Sort {
+  min
+  max
+  new
+  old
+}
+
+input InpParam {
+  name: String
+  value: String
+}
+
+input QueryParams {
+  limit: String
+  sort: Sort
+  page: String
+  search: String
+  brand: String
+  type: String
+  price: String
+  options: [InpParam]
+}
+
+input InpProduct {
+  id: String
+  name: String
+  price: Int
+  type: String
+  brand: String
+  desc: String
+  img: String
+  params: [InpParam]
+  file: Upload
+}

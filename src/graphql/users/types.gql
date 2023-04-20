@@ -1,0 +1,46 @@
+# @format
+
+enum RoleUser {
+  user
+  admin
+}
+
+type User {
+  name: String!
+  telephone: String!
+  password: String!
+  email: String!
+  role: String!
+  avatarURL: String
+  verify: Boolean
+  delivery: String
+}
+
+type ResUser {
+  user: User
+  token: String
+}
+
+input InpUserLog {
+  password: String!
+  email: String!
+}
+
+input InpUserReg {
+  name: String!
+  telephone: String!
+  password: String!
+  email: String!
+  password_again: String
+}
+
+input InpUserUpdate {
+  name: String
+  email: String
+  telephone: String
+  password: String
+  password2: String
+  file: Upload
+  delivery: String
+  avatarURL: String
+}
