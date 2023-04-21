@@ -4,7 +4,7 @@ import { searchParams } from "../../../services/products/searchParams.js";
 import { sortParams } from "../../../services/products/sortParams.js";
 
 export default async (root, args) => {
-  const limit = args.query?.limit || 6;
+  const limit = args.query?.limit || 8;
   const sort = args.query?.sort || null;
   const page = args.query?.page || 1;
 
