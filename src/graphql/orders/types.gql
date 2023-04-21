@@ -19,6 +19,11 @@ type UserOrders {
   _id: ID
 }
 
+type GetUserOrders {
+  count: Int
+  result: [UserOrders]
+}
+
 input QueryOrder {
   date: String
   status: String

@@ -1,14 +1,12 @@
 /** @format */
-import { ErrorHandler } from "../../../helpers/errors.js";
 import OrderSchema from "../../../db/schema/orders.js";
+import { isAuthAdmin } from "../../../helpers/isAuth.js";
 
 export default async (root, { query }, context) => {
   const status = query?.status;
   const date = query?.date;
 
-  if (!context?.token?.role === "admin") {
-    throw ErrorHandler("Not authorized", 401);
-  }
+  isAuthAdmin(context);
 
   //-----------optional  params status-----------//
   const searchStatus = status ? { status } : undefined;
@@ -23,10 +21,12 @@ export default async (root, { query }, context) => {
       }
     : undefined;
   //-----------find all orders----------------------//
-  const orders = await OrderSchema.find({
+  const result = await OrderSchema.find({
     ...searchStatus,
     ...searchDate,
   }).populate("user");
 
-  return orders;
+  const count = result.length;
+
+  return { result, count };
 };

@@ -6,7 +6,7 @@ export const wrapper =
     try {
       return await fun(...args);
     } catch (err) {
-      console.error(`🔴 ${err.message} `);
+      console.error(`🔴 ${err} `);
       throw err;
     }
   };
