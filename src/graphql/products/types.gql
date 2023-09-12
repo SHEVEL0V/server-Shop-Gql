@@ -13,7 +13,7 @@ type Product {
   name: String
   price: Int
   rating: Int
-  img: String
+  images: [String]
   type: String
   brand: String
   desc: String
@@ -68,7 +68,7 @@ input InpProduct {
   type: String
   brand: String
   desc: String
-  img: String
+  images: [String]
   params: [InpParam]
   file: Upload
 }
