@@ -3,7 +3,7 @@
 type Order {
   brand: String
   desc: String
-  img: String
+  images: [String]
   name: String
   price: Int
   qty: Int
@@ -32,7 +32,7 @@ input QueryOrder {
 input AddOrder {
   brand: String
   desc: String
-  img: String
+  images: [String]
   name: String
   price: Int
   qty: Int
