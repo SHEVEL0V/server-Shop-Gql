@@ -62,10 +62,11 @@ input QueryParams {
 }
 
 input InpProduct {
-  id: String
+  _id: String
   name: String
   price: Int
   type: String
+  rating: Int
   brand: String
   desc: String
   images: [String]

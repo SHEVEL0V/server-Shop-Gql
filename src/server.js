@@ -1,5 +1,5 @@
 /** @format */
-import { startStandaloneServer } from '@apollo/server/standalone';
+import { startStandaloneServer } from "@apollo/server/standalone";
 import { ApolloServer } from "@apollo/server";
 import { connectMongoDB } from "./db/connection.js";
 import { verifyToken } from "./services/authorization.js";

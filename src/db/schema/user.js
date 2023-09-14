@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema(
     },
 
     avatarURL: {
-      type: String,
+      type: [String],
     },
     verify: {
       type: Boolean,

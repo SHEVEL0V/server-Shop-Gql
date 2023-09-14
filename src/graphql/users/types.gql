@@ -11,7 +11,7 @@ type User {
   password: String!
   email: String!
   role: String!
-  avatarURL: String
+  avatarURL: [String]
   verify: Boolean
   delivery: String
 }
@@ -42,5 +42,5 @@ input InpUserUpdate {
   password2: String
   file: Upload
   delivery: String
-  avatarURL: String
+  avatarURL: [String]
 }
