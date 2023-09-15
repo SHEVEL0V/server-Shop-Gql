@@ -41,6 +41,6 @@ input AddOrder {
 }
 
 input UpdateOrder {
-  ids: [ID]
+  _id: ID
   status: String
 }

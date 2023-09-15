@@ -4,19 +4,12 @@ import OrderSchema from "../../../db/schema/orders.js";
 import { isAuthAdmin } from "../../../helpers/isAuth.js";
 
 export default async (root, args, context) => {
-  const { status, ids } = args?.update;
+  const { _id, status } = args?.update;
 
   isAuthAdmin(context);
 
   //------update  order status------//
-  const res = await Promise.all(
-    ids.map(
-      async (id) =>
-        await OrderSchema.findByIdAndUpdate(id, { $set: { status } }).populate(
-          "user"
-        )
-    )
-  );
-
-  return res;
+  return await OrderSchema.findByIdAndUpdate(_id, {
+    $set: { status },
+  }).populate("user");
 };

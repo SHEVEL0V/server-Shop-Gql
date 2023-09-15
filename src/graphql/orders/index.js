@@ -10,6 +10,6 @@ export const Orders = {
          getOrders(query:QueryOrder) :GetUserOrders`,
   mutations: `#graphql
        addOrder(add: [AddOrder]):UserOrders
-       updateOrder(update:UpdateOrder):[UserOrders]
+       updateOrder(update:UpdateOrder):UserOrders
        `,
 };
