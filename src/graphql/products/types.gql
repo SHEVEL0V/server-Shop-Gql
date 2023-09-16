@@ -58,7 +58,7 @@ input QueryParams {
   brand: String
   type: String
   price: String
-  options: [InpParam]
+  params: [InpParam]
 }
 
 input InpProduct {

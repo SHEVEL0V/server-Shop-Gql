@@ -31,7 +31,7 @@ export const searchParams = (params) => {
       return;
     }
     //--------add options to search params----------------------------------------------------------------
-    if (key === "options") {
+    if (key === "params") {
       params[key].map(
         ({ name, value }) =>
           (res.params = {
