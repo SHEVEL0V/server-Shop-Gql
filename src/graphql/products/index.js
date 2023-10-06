@@ -8,6 +8,7 @@ export const Products = {
   queries: `#graphql
         getProducts(query:QueryParams) :ResProducts
         getProductById(id:String) : Product
+        getProductByType(type:String) : [Product]
         getProductsDesc : ProductDesc
   `,
   mutations: `#graphql
