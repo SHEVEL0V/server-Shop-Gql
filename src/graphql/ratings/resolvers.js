@@ -9,7 +9,7 @@ const mutations = {
     const { itemId, rate } = args;
 
     if (!token) {
-      throw new ErrorHandler("Not authorized ", 401);
+      return ErrorHandler("Not authorized ", 401);
     }
 
     //--------update Rating--------------//

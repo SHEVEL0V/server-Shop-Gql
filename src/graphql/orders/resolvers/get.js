@@ -1,6 +1,6 @@
 /** @format */
 import OrderSchema from "../../../db/schema/orders.js";
-import { isAuthAdmin } from "../../../helpers/isAuth.js";
+import { isAuthAdmin } from "../../../helpers/isAuthAdmin.js";
 
 export default async (root, { query }, context) => {
   const status = query?.status;

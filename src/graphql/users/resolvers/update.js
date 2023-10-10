@@ -5,7 +5,7 @@ import { ErrorHandler } from "../../../helpers/errors.js";
 
 export default async (root, { user }, { token }) => {
   if (!token) {
-    throw ErrorHandler("Not authorize", 401);
+    return ErrorHandler("Not authorize", 401);
   }
 
   // -----Password hash-----//

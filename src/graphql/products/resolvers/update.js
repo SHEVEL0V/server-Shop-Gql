@@ -1,7 +1,7 @@
 /** @format */
 
 import productSchema from "../../../db/schema/product.js";
-import { isAuthAdmin } from "../../../helpers/isAuth.js";
+import { isAuthAdmin } from "../../../helpers/isAuthAdmin.js";
 
 export default async (root, { update }, context) => {
   const { _id } = update;
